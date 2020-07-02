@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-deployment
+  labels:
+    app: front-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-pod
+  template:
+    metadata:
+      name: front-pod
+      labels:
+        app: front-pod
+    spec:
+      containers: 
+      - name: frontend
+        image: rajeshwartiwari/frontend:latest
+        ports:
+        - containerPort: 80
