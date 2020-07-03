@@ -1,9 +1,9 @@
-import express from "express";
-import mongoose from "mongoose";
-import bodyparser from "body-parser";
-import routes  from './routes/soccerRoutes';
-import cors from 'cors';
-//const uuidv1 = require("uuid"); 
+const express = require("express");
+const bodyparser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const routes = require("./routes/soccerRoutes");
+
 
 const app = express();
 const PORT = 4001;

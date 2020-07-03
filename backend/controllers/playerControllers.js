@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
-import { PlayerSchema } from '../models/playerModels';
+const mongoose = require("mongoose");
+const  PlayerSchema  = require('../models/playerModels');
 
 const Player =mongoose.model('Player', PlayerSchema);
 
-export const addNewPlayer=(req, res) => {
+ const addNewPlayer=(req, res) => {
     let newPlayer = new Player(req.body);
 
     newPlayer.save((err, Player) => {
@@ -17,7 +17,7 @@ export const addNewPlayer=(req, res) => {
 };
 
 
-export const getPlayers = (req, res) => {
+ const getPlayers = (req, res) => {
  
   Player.find({},(err, Player) => {
     if (err) {
@@ -28,7 +28,7 @@ export const getPlayers = (req, res) => {
 };
 
 
-export const getPlayerWithID = (req, res) => {
+ const getPlayerWithID = (req, res) => {
   Player.findById(req.params.PlayerId, (err, Player) => {
     if (err) {
       res.send(err);
@@ -37,7 +37,7 @@ export const getPlayerWithID = (req, res) => {
   });
 };
 
-export const updatePlayer = (req, res) => {
+ const updatePlayer = (req, res) => {
   Player.findOneAndUpdate({_id:req.params.PlayerId},req.body,{new:true}, (err, Player) => {
      
     if (err) {
@@ -47,7 +47,7 @@ export const updatePlayer = (req, res) => {
   });
 };
 
-export const deletePlayer = (req, res) => {
+ const deletePlayer = (req, res) => {
   Player.remove(
     { _id: req.params.PlayerId },
     (err, Player) => {
@@ -58,3 +58,12 @@ export const deletePlayer = (req, res) => {
     }
   );
 };
+
+
+module.exports = {
+   addNewPlayer,
+  getPlayers,
+  getPlayerWithID,
+  updatePlayer,
+  deletePlayer
+}

@@ -1,10 +1,10 @@
-import {
+const {
   addNewPlayer,
   getPlayers,
   getPlayerWithID,
   updatePlayer,
   deletePlayer
-} from "../controllers/playerControllers";
+} = require ("../controllers/playerControllers");
 
 const routes= (app) => {
 app.route('/players')
@@ -21,4 +21,5 @@ app.route('/player/:PlayerId')
 .put(updatePlayer)
 .delete(deletePlayer)
 }
-export default routes;
+
+module.exports = routes;

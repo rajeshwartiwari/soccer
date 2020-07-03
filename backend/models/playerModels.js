@@ -1,9 +1,8 @@
-import mongoose from "mongoose";
-//import { PlayerSchema } from './../../../Exercise Files/Ch_03/03_02/end/backend/models/playerModel';
+const mongoose = require("mongoose");
 
 const Schema=mongoose.Schema;
 
-export const PlayerSchema = new Schema({
+ const PlayerSchema = new Schema({
          firstName: {
            type: String,
            required: true,
@@ -52,3 +51,5 @@ export const PlayerSchema = new Schema({
            default:Date.now
          }
        });
+
+      module.exports = PlayerSchema;
