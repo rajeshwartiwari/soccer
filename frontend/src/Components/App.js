@@ -17,8 +17,8 @@ constructor(props){
 }
 
 componentDidMount(){
-  //const url= 'http://backend-service:4001/players';
-  const url = 'http://localhost:4001/players';
+  const url= 'http://backend-service:4001/players';
+  //const url = 'http://localhost:4001/players';
   axios.get(url)
   .then((Response) => {
     this.setState({

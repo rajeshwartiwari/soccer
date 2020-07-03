@@ -11,4 +11,4 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: node-pod
+    app: front-pod
