@@ -11,7 +11,7 @@ const PORT = 4001;
 // mongo connection
 mongoose.Promise = global.Promise;
 //mongoose.connect("mongodb://localhost/soccerDB", {
-mongoose.connect("mongodb://admin:rajeshwar12@ds141428.mlab.com:41428/ninjapoc", {
+mongoose.connect("mongodb://xxxxx:xxxxxx@ds141428.mlab.com:41428/ninjapoc", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
